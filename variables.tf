@@ -6,7 +6,7 @@ variable "project_id" {
 
 variable "config_yaml" {
     description = "Initial Settings"
-    default     = "lbserverless.yaml"
+    default     = "test.yaml"
     type        = string
 }
 

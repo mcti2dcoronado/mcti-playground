@@ -15,7 +15,7 @@ terraform {
   cloud {
     organization = "dcoronado-mcit"
     workspaces {
-      name = "mcti-test"
+      name = "mcti-playground"
     }
   }
 }
