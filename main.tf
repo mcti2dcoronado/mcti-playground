@@ -1,10 +1,13 @@
 locals {
+
+  # Working with a list of strings
   avengers = ["sami", "olarewaju", "arunthavar","ajebit","jade","oladipupo","douglass"]
   
+  # Convert list of strings into set
   regions = ["north","east",3,"west"]
-
   list_regions = toset(local.regions)
 
+  # Working with a map list
   strengths = {
     "sami"          = "Artificial Intelligence"
     "olarewaju"     = "Sheild"
@@ -25,6 +28,7 @@ resource "null_resource" "avengers" {
   }
 }
 
+# Note: for_each accepts map or set 
 resource "null_resource" "strengths" {
   for_each = local.strengths
   triggers = {
@@ -33,10 +37,7 @@ resource "null_resource" "strengths" {
   }
 }
 
-output "strengths" {
-  value = null_resource.strengths
-}
-
+# Convert list of strings into set - Output
 output "list_regions" {
   value = local.list_regions
 }
