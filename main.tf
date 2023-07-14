@@ -41,6 +41,18 @@ locals {
 
   # split a word, using separator "-", check the index 0-1
   word_separate = lower(split("-", "backend-getData")[1])
+
+  # Fetch data from yaml file
+functions_list_temp = yamldecode(file("${path.root}/test.yaml"))["cloud_functions_list"]
+
+  functions_list = flatten([ 
+    for entry in local.functions_list_temp :
+    {
+        name        = lower(entry.name)
+        neg_name    = lower("${terraform.workspace}-${entry.name}-neg")
+    }
+  ])
+
 }
 
 # Note: local.avangers is a list of strings, so we need to convert into a set
@@ -77,4 +89,9 @@ output "list" {
 # split a word - output
 output "word_separate" {
     value = local.word_separate
+}
+
+# fetch data from yaml file
+output "yaml_output" {
+    value = local.functions_list
 }

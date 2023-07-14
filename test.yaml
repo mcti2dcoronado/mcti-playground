@@ -1,0 +1,5 @@
+cloud_functions_list:
+    - name: getData
+    - name: updateData
+    - name: deleteData
+    - name: insertData
