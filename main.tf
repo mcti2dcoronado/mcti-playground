@@ -16,11 +16,34 @@ locals {
     "jade"          = "Hammer"
     "oladipupo"     = "Web"
     "douglass"      = "Vibranium suit"
-  }
+ }
 
+# Working with duplicates, using flatten and distinct
+
+  paths_list = [
+    "getData",
+    "putData",
+    "postData",
+    "deleteData"
+  ]
+
+  regions_list = [
+    "northamerica-northeast1",
+    "us-central1"
+]
+
+  list = distinct(flatten([ for region in local.regions_list : [
+                    for path in local.paths_list : {
+                        region = region
+                        path = path
+                    }
+  ]]))
+
+  # split a word, using separator "-", check the index 0-1
+  word_separate = lower(split("-", "backend-getData")[1])
 }
 
-
+# Note: local.avangers is a list of strings, so we need to convert into a set
 resource "null_resource" "avengers" {
   for_each = toset(local.avengers)
   triggers = {
@@ -44,4 +67,14 @@ output "list_regions" {
 
 output "regions" {
     value = local.regions
+}
+
+# Working with duplicates - output
+output "list" {
+    value = local.list
+}
+
+# split a word - output
+output "word_separate" {
+    value = local.word_separate
 }
