@@ -53,6 +53,9 @@ functions_list_temp = yamldecode(file("${path.root}/test.yaml"))["cloud_function
     }
   ])
 
+  # Using join
+  list2_regions = join(", ", [for s in ["northamerica-northeast1","us-central1"]  : format("%s", s)])
+
 }
 
 # Note: local.avangers is a list of strings, so we need to convert into a set
@@ -94,4 +97,9 @@ output "word_separate" {
 # fetch data from yaml file
 output "yaml_output" {
     value = local.functions_list
+}
+
+# using join output
+output "list2_regions" {
+    value = local.list2_regions
 }
