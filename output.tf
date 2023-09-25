@@ -6,3 +6,8 @@ output "avengers" {
 output "strengths" {
   value = null_resource.strengths
 }
+
+output "provinces" {
+  value = [ for province in local.provinces_canada: province => population ]
+
+}

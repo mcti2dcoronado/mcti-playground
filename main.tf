@@ -56,6 +56,21 @@ functions_list_temp = yamldecode(file("${path.root}/test.yaml"))["cloud_function
   # Using join
   list2_regions = join(", ", [for s in ["northamerica-northeast1","us-central1"]  : format("%s", s)])
 
+# Working with a map list
+  provinces_canada = {
+    "Ontario"                     = 19065.3
+    "Quebec"                      = 9472.3
+    "British Columbia"            = 6669.7
+    "Alberta"                     = 6498.4
+    "Manitoba"                    = 1730
+    "Saskatchewan"                = 1527.4
+    "Nova Scotia"                 = 1189.2
+    "New Brunswick"               = 1099.3
+    "Newfoundland and Labrador"   = 857
+    "Prince Edward Island"        = 168.4
+    "Yukon"                       = 51.3
+ }
+
 }
 
 # Note: local.avangers is a list of strings, so we need to convert into a set
