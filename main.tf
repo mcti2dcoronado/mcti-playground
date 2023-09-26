@@ -60,48 +60,10 @@ functions_list_temp = yamldecode(file("${path.root}/test.yaml"))["cloud_function
   provinces_canada = {
     ontario = {
       name = Ontario"
-      #population = "19065.3"
     }
     quebec = {
         name = "Quebec"
-        #population = "9472.3"
       }
-/*      british_columbia = {
-        name = "British Columbia"
-        population = "6669.7"
-      }
-      alberta = {
-        name = "Alberta"
-        population = "6498.4"
-      }
-      manitoba = {
-        name =  "Manitoba"
-        population = "1730"
-      }
-      saskatchewan = {
-        name = "Saskatchewan"
-        population = "1527.4"
-      }
-      nova_scotia = {
-        name = "Nova Scotia"
-        population = "1189.2"
-      }
-      new_brunswick = {
-        name =  "New Brunswick"
-        population = "1099.3"
-      }
-      newfoundland = {
-        name = "Newfoundland and Labrador"
-        population = "857"
-      }
-      prince_edward = {
-        name = "Prince Edward Island"
-        population = "168.4"
-      }
-      yukon = {
-        name = "Yukon"
-        population = "51.3"
-      } */
   }
 }
 
