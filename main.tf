@@ -60,13 +60,13 @@ functions_list_temp = yamldecode(file("${path.root}/test.yaml"))["cloud_function
   provinces_canada = {
     ontario = {
       name = Ontario"
-      population = "19065.3"
+      #population = "19065.3"
     }
     quebec = {
         name = "Quebec"
-        population = "9472.3"
+        #population = "9472.3"
       }
-      british_columbia = {
+/*      british_columbia = {
         name = "British Columbia"
         population = "6669.7"
       }
@@ -101,7 +101,7 @@ functions_list_temp = yamldecode(file("${path.root}/test.yaml"))["cloud_function
       yukon = {
         name = "Yukon"
         population = "51.3"
-      }
+      } */
   }
 }
 
