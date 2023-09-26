@@ -8,6 +8,7 @@ output "strengths" {
 }
 
 output "provinces" {
-  value = [ for province in local.provinces_canada: province => population ]
-
+  value = [ 
+    for province in local.provinces_canada : lookup(province, "name", "population")
+  ]
 }
