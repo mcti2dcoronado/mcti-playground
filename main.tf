@@ -59,12 +59,12 @@ functions_list_temp = yamldecode(file("${path.root}/test.yaml"))["cloud_function
 # Working with a map list
   provinces_canada = {
     ontario = {
-      name = "Ontario",
-      population = 123455
+      name = "Ontario"
+      population = 19065.3
     }
     quebec = {
-        name = "Quebec",
-        population = 51455555
+        name = "Quebec"
+        population = 9472.3
       }
   }
 }

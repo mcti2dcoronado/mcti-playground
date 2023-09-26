@@ -9,6 +9,10 @@ output "strengths" {
 
 output "provinces" {
   value = [ 
-    for province in local.provinces_canada : lookup(province, "name", "population")
+    for province in local.provinces_canada : lookup(province, "name", "")
   ]
+}
+
+output "ontario" {
+  value = lookup(local.provinces_canada, "ontario", "")
 }
